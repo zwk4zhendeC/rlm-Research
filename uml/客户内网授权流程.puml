@@ -1,0 +1,20 @@
+@startuml
+title 客户内网License Server授权流程
+
+participant "许可服务器\n(rlm + ISV server)" as Server
+participant "客户端\n(集成RLM client)" as Client
+
+Client -> Client: 启动产品
+Client -> Client: rlm_init()\n定位license server
+Client -> Server: rlm_checkout(product, version)
+
+Server -> Server: 校验license文件签名
+Server -> Server: 校验产品、版本、有效期
+Server -> Server: 校验并发数量或授权规则
+Server --> Client: 返回授权成功
+Client -> Client: 进入可用状态
+opt 使用结束
+Client -> Server: rlm_checkin()
+Server -> Server: 归还并发许可\n或更新使用状态
+end
+@enduml

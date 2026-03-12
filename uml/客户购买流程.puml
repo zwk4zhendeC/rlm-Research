@@ -1,0 +1,24 @@
+@startuml
+title ISV向客户交付产品与License Server的流程
+
+participant "大禹安全" as ISV
+participant "客户" as Customer
+
+Customer -> ISV: 购买产品授权
+
+ISV -> Customer: 提供获取hostid的工具
+Customer -> ISV: 客户准备一台服务器并提供hostid
+
+ISV -> ISV: 根据hostid生成并签名server端license文件
+ISV -> Customer: 交付产品
+ISV -> Customer: 交付许可服务器包\n(rlm + ISV server/settings + 管理工具)
+ISV -> Customer: 交付客户专属server license
+Customer -> Customer: 在客户侧部署并启动许可服务器
+Customer -> Customer: 在客户端安装产品并配置连接许可服务器
+
+
+
+Customer -> ISV: 续费、扩容、升级、换机申请
+ISV -> ISV: 重新生成并签名新license
+ISV -> Customer: 发送新的license文件
+@enduml

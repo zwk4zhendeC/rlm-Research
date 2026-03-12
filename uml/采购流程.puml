@@ -1,0 +1,13 @@
+@startuml
+title 采购RLM的流程
+
+actor "RLM公司" as RLM
+participant "我们公司" as ISV
+
+RLM -> ISV: 提供RLM 开发套件、许可
+ISV -> RLM: 激活开发套件
+ISV -> ISV: 根据许可生成ISV密钥对\n(公钥/私钥)
+ISV -> ISV: 将SDK和公钥内嵌到产品中
+ISV -> ISV: 编写许可策略对应的ISV Server，并内嵌公钥
+ISV -> ISV: 构建交付物\n- 产品客户端\n- rlm通用服务器\n- ISV server
+@enduml
