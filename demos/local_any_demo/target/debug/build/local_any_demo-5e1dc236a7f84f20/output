@@ -1,0 +1,10 @@
+cargo:rerun-if-env-changed=RLM_SDK_DIR
+cargo:rerun-if-changed=/work-dir/dayu/rlm/rlm_kit/x64_l1/rlm.a
+cargo:rerun-if-changed=/work-dir/dayu/rlm/rlm_kit/x64_l1/libcrypto.a
+cargo:rustc-link-search=native=/work-dir/dayu/rlm/demos/local_any_demo/target/debug/build/local_any_demo-5e1dc236a7f84f20/out
+cargo:rustc-link-search=native=/work-dir/dayu/rlm/rlm_kit/x64_l1
+cargo:rustc-link-lib=static=rlm
+cargo:rustc-link-lib=static=crypto
+cargo:rustc-link-lib=pthread
+cargo:rustc-link-lib=dl
+cargo:rustc-link-lib=rt

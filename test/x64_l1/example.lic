@@ -1,0 +1,13 @@
+HOST localhost ANY 5053
+ISV demo
+LICENSE demo rlmclient 1.0 permanent uncounted hostid=any sig=0
+LICENSE demo test1 1.0 permanent uncounted hostid=any sig=0
+LICENSE demo test2 1.0 permanent 2 sig=0
+LICENSE demo test3 1.0 permanent uncounted hostid=any sig=0
+
+LICENSE demo rlm_license_center 20.0 permanent uncounted hostid=ANY sig=0
+LICENSE demo rlm_act_admin 20.0 permanent uncounted hostid=ANY sig=0
+LICENSE demo rlm_act_view 20.0 permanent uncounted hostid=ANY sig=0
+LICENSE demo rlm_gen_license 20.0 permanent uncounted hostid=ANY sig=0
+
+LICENSE demo rlm_roam 1.0 permanent uncounted hostid=ANY sig=0

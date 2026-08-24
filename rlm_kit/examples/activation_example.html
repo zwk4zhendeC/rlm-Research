@@ -1,0 +1,34 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<title>RLM License Activation Sample Web Page</title>
+</head>
+<body>
+
+<h3>RLM License Activation Sample Web Page</h3>
+<p align="left">This web page is an example you can use to create your own activation page on your website, instead of using the generic RLM web server.  This can be done in place of, or in addition to the rlm_act_request() call inside your application.</p>
+<p align="left">This web page uses the standard RLM license generator <i>ISV_mklic</i> in your cgi-bin directory.  In order to use this example for your own use, modify <i><b>reprise</i></b> in the form action attribute below to either <b><i>demo</b></i> or your ISV name.<br><br>Also, if your webserver is running on windows, change <i>ISV_mklic</i> in the form action attribute below to <i>ISV_mklic.exe</i></p>
+
+<hr>
+<p align="left">Enter the data below and press MAKE LICENSE to fulfill your license from the RLM license generator.</p>
+
+ <form action=/cgi-bin/reprise_mklic method=POST>
+  <br><table border=\"0\" cellpadding=\"3\" cellspacing=\"3\">
+
+  <tr><td>Activation Key: </td><td><input type=text name=akey size=25></td></tr>
+  <tr><td></td><td>If this is a floating license, enter the hostid of the license server below, otherwise enter the hostid of the machine to lock the license.</td></tr>
+  <tr><td>Host ID: </td><td><input type=text name=hostid size=25></td></tr>
+  <tr><td></td><td>If this is a floating license, enter the number of licenses below, otherwise, leave a 1 in this field.</td></tr>
+  <tr><td>License Count: </td><td><input type=text name=count size=5 value=1></td></tr>
+  <tr><td>Extra License Parameters: </td><td><input type=text name=extra size=80></td></tr>
+  <tr><td>String to Log: </td><td><input type=text name=log size=80></td></tr>
+  <tr><td>Hostname for license: </td><td><input type=text name=hostname size=64></td></tr>
+  </table>
+
+ <br><input type=submit value="MAKE LICENSE">
+ </form>
+
+</body>
+</html>

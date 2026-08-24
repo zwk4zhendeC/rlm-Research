@@ -1,0 +1,113 @@
+Release Notes - RLM v17.0BL1  April 2025
+______________________________________________
+
+v17.0BL1 is available on Windows, Mac, and Linux systems.
+
+All manuals are available on the Reprise Website at: https://reprisesoftware.com/docs/
+
+-----------------------------------------------------------------------
+Notes on this release:
+----------------------
+    - Identity-Based Licensing has been added to RLM. Product entitlements can be obtained from RLM Cloud with just a username and password.
+    - rlmutil now has methods to view and remove named users from named-user licenses.
+
+Problems fixed in this release:
+_______________________________
+
+    - CVE-2021-37498
+    - CVE-2021-37499
+    - CVE-2021-44153
+    - Fixed regression which caused RLM to not be able to retrieve hostid from hardware dongles
+    - RLM will now locate license files when the filepath contains an @ symbol
+    - Removed clock jump warning at startup of license server
+    - Named user count is now displayed in the web interface
+
+Known issues in this release
+____________________________
+
+    - License signing with rlmsign fails when the filename contains a non-ASCII character.
+    - RLM Cloud web services API fails to retrieve log files if it contains wide/8-bit characters (can still retrieve log files via web portal).
+    - Product returned from rlm_actinfo2() is incorrect if variable is not sized specifically.
+    - RLM web interface performance may be slow when running RLM on Windows. Sentinel HASP drivers can be installed to improve this.
+    - Unable to reset passwords without at least one login.
+
+What's new
+__________
+
+    - 32-bit Linux is no longer supported
+    - RLM will validate ISV binaries against a sha256 hash file generated during build
+    
+API changes
+___________
+
+    - None
+
+New license keywords
+____________________
+
+    - None
+
+API additions
+_____________
+
+    - Added rlm_id_login()
+
+Options file changes
+____________________
+
+    - None
+
+Activation changes
+__________________
+
+    - LAN IP addresses are now blacklisted from Web UI activation requests
+    - Only ports 80 and 443 are allowed for Web UI activation requests
+
+Dependency changes
+__________________
+
+    - None
+
+Platforms supported
+___________________  
+
+Linux on x64: Rocky 8 (x64_l1)
+Linux on arm 64-bit: Rocky 8 (arm64_l1)
+
+Windows 32-bit - Visual Studio 2022 (x86_w4)
+Windows 64-bit - Visual Studio 2022 (x64_w4)
+Windows ARM64  - Visual Studio 2022 (arm64_w4)
+
+macOS: 15.3.1 intel 64-bit (x64_m2)
+macOS: 15.0 arm 64-bit (arm64_m2)
+
+
+RLM build environment
+_____________________
+
+x64_l1:
+Linux 4.18.0-553.40.1.el8_10.x86_64 #1 SMP Thu Feb 13 13:28:49 UTC 2025 x86_64 x86_64 x86_64 GNU/Linu
+gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-23)x
+ldd (GNU libc) 2.28
+
+arm64_l1:
+Linux 42db37ccdc52 6.12.9-200.fc41.aarch64 #1 SMP PREEMPT_DYNAMIC Thu Jan  9 16:37:16 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
+gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-23)
+ldd (GNU libc) 2.28
+
+x86_w4:
+Windows 10 Microsoft Visual Studio 2022
+
+x64_w4
+Windows 10 Microsoft Visual Studio 2022
+
+arm64_w1
+Windows 11 Microsoft Visual Studio 2022
+
+x64_m2:
+Darwin reprise-macos15-intel.amtec.org 24.3.0 Darwin Kernel Version 24.3.0: Thu Jan 2 20:22:00 PST 2025; root:xnu-11215.81.4~3/RELEASE_X86_64 x86_64
+Apple clang version 16.0.0 (clang-1600.0.26.6)
+
+arm64_m2:
+Darwin macrunner16.amtec.org 24.0.0 Darwin Kernel Version 24.0.0: Mon Aug 12 21:27:44 PDT 2024; root:xnu-11215.1.10~5/RELEASE_ARM64_T8103 arm64
+Apple clang version 16.0.0 (clang-1600.0.26.3)

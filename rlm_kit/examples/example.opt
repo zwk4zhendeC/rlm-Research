@@ -1,0 +1,49 @@
+#
+#	Sample end-user options file
+#
+#	Lines beginning with a "#" are comments to illustrate syntax
+#
+
+# DEBUGLOG +/tmp/isv.dlog
+
+REPORTLOG +/tmp/isv.rlog
+
+EXCLUDEALL user joe
+EXCLUDEALL host host1
+# EXCLUDEALL internet 192.9.0.1
+# EXCLUDEALL group group_without_matt
+# EXCLUDEALL host_group group_without_pinball
+# EXCLUDEALL USeR user2
+
+EXCLUDE test1 user sam
+EXCLUDE test1 host host1
+# EXCLUDE test2 internet 192.9.0.1
+# EXCLUDE test2 group group1
+# EXCLUDE test3 host_group hgroup
+# EXCLUDE test3 host pin
+# EXCLUDE test4 USeR user2
+
+GROUP group1 green peacock plum
+HOST_GROUP group2 study library hall
+
+# INCLUDEALL user sam
+# INCLUDEALL host hostname2
+# INCLUDEALL dispLAy disp2
+# INCLUDEALL iNternet 192.9.0.2
+# INCLUDEALL grOup group1
+# INCLUDEALL hoSt_group group2
+# INCLUDEALL USeR user3	(Note: keywords can be any case)
+
+# INCLUDE test1 user plum
+# INCLUDE test1 host host1
+# INCLUDE test2 internet 192.9.0.1
+# EXCLUDE test2 host pinball
+# INCLUDE test3 host_group hgroup
+# INCLUDE test3 host pin
+# INCLUDE test4 USeR user2
+
+MAX 5 test3 user sam
+
+RESERVE 2 test1 user tom
+RESERVE 3 test1 user dick
+RESERVE 2 test2 user harry
